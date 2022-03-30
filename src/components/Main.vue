@@ -20,7 +20,7 @@
             <div class="row text-center">
                 <div class="col-12">
                     <div class="contain-load">
-                        <p class="fw-bold text-white fs-6">LOAD</p>
+                        <p class="fw-bold text-white fs-6">LOADING</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ export default {
             height: 90vh;
             background-image: url("../assets/load.gif");
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             overflow: hidden;
             background-color: #262626;
