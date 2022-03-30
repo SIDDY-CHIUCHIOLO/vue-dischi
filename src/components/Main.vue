@@ -1,6 +1,6 @@
 <template>
     <main class="d-flex flex-wrap justify-content-center align-items-center">
-        <div class="container">
+        <div v-if="listSpotifySongs"  class="container">
             <div class="row">
                 <div class="col-12">
                     <div id="my-container-cards" class="d-flex flex-wrap justify-content-center align-items-center p-5">
@@ -12,6 +12,15 @@
                             :songAuthor="element.author"
                             :songYear="element.year"
                         />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else class="container-fluid my-container-load">
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="contain-load">
+                        <p class="fw-bold text-white fs-6">LOAD</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +44,7 @@ export default {
         MainCards,
     },
     created: function(){
-        this.apiSpotifySongs()
+        setTimeout(this.apiSpotifySongs, 5000, this.listSpotifySongs)
     },
     methods:{
         apiSpotifySongs(){
@@ -56,5 +65,17 @@ export default {
 <style lang="scss">
     main{
         background-color: #1e2d3b;
+        .my-container-load{
+            height: 90vh;
+            background-image: url("../assets/load.gif");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            background-color: #262626;
+            .contain-load{
+                line-height: 90vh;
+            }
+        }
     }
 </style>
