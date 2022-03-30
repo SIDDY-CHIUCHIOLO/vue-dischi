@@ -1,12 +1,10 @@
 <template>
-    <div class="col-2">
-        <div class="card text-center" >
-            <img src="@/assets/logo-spotify.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h1 class="card-title text-white">Card title</h1>
-                <span class="card-text">boom</span>
-                <span class="card-text d-block">boom</span>
-            </div>
+    <div class="card text-center p-3" >
+        <img :src="songPoster" class="card-img-top" :alt="songTitle">
+        <div class="card-body">
+            <h4 class="card-title text-white">{{songTitle}}</h4>
+            <span class="card-text">{{songAuthor}}</span>
+            <span class="card-text d-block">{{songYear}}</span>
         </div>
     </div>
 </template>
@@ -16,12 +14,16 @@
 
 export default {
     name: "MainCardsIndex",
+    props:['songPoster', 'songTitle', 'songAuthor', 'songYear']
 }
 </script>
 
 <style lang="scss" scoped>
     .card{
         background-color: #2e3a46;
+        width: calc(80% / 5);
+        margin: 10px 2%;
+        height: 350px;
         span{
             color: #807f80;
         }
